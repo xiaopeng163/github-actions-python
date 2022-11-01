@@ -6,12 +6,8 @@ jobs:
   pytest:
     runs-on: ubuntu-latest
     steps:
-      - name: clone repository
-        run: |
-          pwd
-          git clone https://github.com/xiaopeng163/github-actions-python
-          cd github-actions-python
-          pwd
+      - name: checkout code
+        uses: actions/checkout@v3
       - name: install pytest
         run: pip install pytest
       - name: run pytest
