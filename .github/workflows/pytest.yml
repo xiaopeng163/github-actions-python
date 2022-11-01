@@ -6,13 +6,6 @@ jobs:
   pytest:
     runs-on: ubuntu-latest
     steps:
-      - name: echo github action context
-        run: echo "${{ toJSON(github) }}"
-      - name: echo github repo workspace
-        run: |
-          echo $GITHUB_WORKSPACE
-          pwd
-        
       - name: clone repository
         run: |
           pwd
