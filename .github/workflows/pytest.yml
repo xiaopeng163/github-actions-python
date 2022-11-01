@@ -9,12 +9,16 @@ jobs:
       - name: echo github action context
         run: echo "${{ toJSON(github) }}"
       - name: echo github repo workspace
-        run: echo $GITHUB_WORKSPACE
+        run: |
+          echo $GITHUB_WORKSPACE
+          pwd
         
       - name: clone repository
         run: |
+          pwd
           git clone https://github.com/xiaopeng163/github-actions-python
           cd github-actions-python
+          pwd
       - name: install pytest
         run: pip install pytest
       - name: run pytest
