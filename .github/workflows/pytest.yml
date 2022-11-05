@@ -5,7 +5,9 @@ jobs:
 
   pytest:
     runs-on: ubuntu-latest
-    steps:  
+    steps:
+      - name: print github action context
+        run: echo ${{ github.repositoryUrl }}
       - name: checkout code
         uses: actions/checkout@v3
       - name: install pytest
