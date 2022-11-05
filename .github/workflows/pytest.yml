@@ -8,8 +8,8 @@ jobs:
     steps:
       - name: pre - checkout
         run: |
-          pwd
-          ls -lh
+          echo ${{ github.repositoryUrl }}
+          
       - name: checkout code
         uses: actions/checkout@v3
       - name: after checkout
