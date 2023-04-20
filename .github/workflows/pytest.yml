@@ -13,10 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print github action context
-        run: echo ${{ github.repositoryUrl }}
+        run: |
+          echo ${{ github.repositoryUrl }}
+          pwd
       - name: checkout code
         uses: actions/checkout@v3
       - name: install pytest
-        run: pip install pytest
+        run: |
+          pip install pytest
+          pwd
       - name: run pytest
-        run: pytest
+        run: |
+          pytest
+          pwd
